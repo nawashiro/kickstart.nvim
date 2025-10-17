@@ -10,6 +10,10 @@ return {
     'MunifTanjim/nui.nvim',
   },
   lazy = false,
+  keys = {
+    {mode = "n", "<C-n>", "<cmd>NvimTreeToggle<CR>", desc = "NvimTreeをトグルする"},
+    {mode = "n", "<C-m>", "<cmd>NvimTreeFocus<CR>", desc = "NvimTreeにフォーカス"},
+  },
   config = function ()
     vim.opt.termguicolors = true
     require("bufferline").setup{}
