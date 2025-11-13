@@ -12,7 +12,7 @@ return {
   lazy = false,
   keys = {
     { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
-    { '<leader>e', '<CMD>Neotree toggle<CMD>', desc = 'Neotree toggle' },
+    { '<leader>e', '<CMD>Neotree toggle<CR>', desc = 'Neotree toggle' },
     { '<leader>r', '<CMD>Neotree focus<CR>', desc = 'Neotree focus' },
   },
   opts = {
