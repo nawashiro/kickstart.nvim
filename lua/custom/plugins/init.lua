@@ -10,5 +10,5 @@ return {
     require 'kickstart.plugins.neo-tree',
     require 'kickstart.plugins.gitsigns',
     require 'custom.plugins.obsidian',
-    require 'custom.plugins.markdownlint'
+    require 'custom.plugins.coc-markdownlint'
 }
