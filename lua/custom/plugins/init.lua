@@ -9,5 +9,6 @@ return {
     require 'kickstart.plugins.autopairs',
     require 'kickstart.plugins.neo-tree',
     require 'kickstart.plugins.gitsigns',
-    require 'custom.plugins.obsidian'
+    require 'custom.plugins.obsidian',
+    require 'custom.plugins.markdownlint'
 }

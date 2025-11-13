@@ -1,0 +1,3 @@
+return {
+    'markdownlint/markdownlint.nvim',
+}
