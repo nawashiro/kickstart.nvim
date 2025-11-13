@@ -7,7 +7,7 @@ return {
     require 'kickstart.plugins.indent_line',
     require 'custom.plugins.lint',
     require 'kickstart.plugins.autopairs',
-    require 'kickstart.plugins.neo-tree',
+    require 'custom.plugins.neo-tree',
     require 'kickstart.plugins.gitsigns',
     require 'custom.plugins.obsidian'
 }
