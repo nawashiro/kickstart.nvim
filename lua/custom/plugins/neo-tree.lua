@@ -10,12 +10,10 @@ return {
     'MunifTanjim/nui.nvim',
   },
   lazy = false,
-
-  vim.keymap.set("n", "<leader>e", "<CMD>Neotree toggle<CR>")
-  vim.keymap.set("n", "<leader>r", "<CMD>Neotree focus<CR>")
-
   keys = {
     { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '<leader>e', '<CMD>Neotree toggle<CMD>', desc = 'Neotree toggle' },
+    { '<leader>r', '<CMD>Neotree focus<CR>', desc = 'Neotree focus' },
   },
   opts = {
     filesystem = {
