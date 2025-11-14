@@ -33,6 +33,13 @@ return {
         end,
       },
     },
+
+    -- Optional, customize how markdown links are formatted.
+    markdown_link_func = function(opts)
+      local raw_link = require("obsidian.util").markdown_link(opts)
+      local link = string.gsub(raw_link, "%20", " ")
+      return link
+    end,
     
     preferred_link_style = "markdown",
 
@@ -45,8 +52,8 @@ return {
       -- Define how various check-boxes are displayed
       checkboxes = {
         -- NOTE: the 'char' value has to be a single character, and the highlight groups are defined below.
-        [" "] = { char = "✅", hl_group = "ObsidianTodo" },
-        ["x"] = { char = "⬜", hl_group = "ObsidianDone" },
+        [" "] = { char = "⬜", hl_group = "ObsidianTodo" },
+        ["x"] = { char = "✅", hl_group = "ObsidianDone" },
         -- Replace the above with this if you don't have a patched font:
         -- [" "] = { char = "☐", hl_group = "ObsidianTodo" },
         -- ["x"] = { char = "✔", hl_group = "ObsidianDone" },
