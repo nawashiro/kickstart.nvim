@@ -43,7 +43,11 @@ return {
     },
 
     -- Optional, customize how markdown links are formatted.
-    markdown_link_func = function(opts)      
+    markdown_link_func = function(opts)
+      local hex_to_char = function(x)
+        return string.char(tonumber(x, 16))
+      end
+      
       local urldecode = function(url)
         if url == nil then
           return
