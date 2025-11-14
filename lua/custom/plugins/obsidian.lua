@@ -17,14 +17,13 @@ return {
       {
         name = "zettelkasten",
         path = "/workspace/zettelkasten",
-        templates = {
-          folder = "projects/00 system-management area/00 system-management category/00.03 template",
-          date_format = "%Y-%m-%d",
-          time_format = "%H:%M",
-        },
       },
     },
-
+    templates = {
+      folder = "projects/00 system-management area/00 system-management category/00.03 template",
+      date_format = "%Y-%m-%d",
+      time_format = "%H:%M",
+    },
     -- see below for full list of options 👇
   },
 }
