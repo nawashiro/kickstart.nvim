@@ -24,7 +24,7 @@ return {
       date_format = "%Y-%m-%d",
       time_format = "%H:%M",
       substitutions = {
-        YYMMDDHHmmss = function()
+        datetime = function()
           return os.date("%Y%m%d%H%M%s", os.time())
         end
       }
