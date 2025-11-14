@@ -23,6 +23,11 @@ return {
       folder = "projects/00 system-management area/00 system-management category/00.03 template",
       date_format = "%Y-%m-%d",
       time_format = "%H:%M",
+      substitutions = {
+        dateYYMMDDHHmmss = function()
+          return os.date("%Y%m%d%H%M%s", os.time())
+        end
+      }
     },
     -- see below for full list of options 👇
   },
