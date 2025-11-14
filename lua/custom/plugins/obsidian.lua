@@ -81,8 +81,6 @@ return {
       },
     },
     
-    conceallevel = 1,
-    
     -- see below for full list of options 👇
   },
 }
