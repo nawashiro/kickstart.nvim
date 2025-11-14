@@ -10,4 +10,5 @@ return {
     require 'custom.plugins.neo-tree',
     require 'kickstart.plugins.gitsigns',
     require 'custom.plugins.obsidian'
+    require 'custom.plugins.image'
 }
