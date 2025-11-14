@@ -20,9 +20,9 @@ return {
       },
     },
     templates = {
-      folder = "projects/00 system-management area/00 system-management category/00.03 template",
+      folder = "projects/00 system-management area/00 system-management category/00.11 nvim template",
       date_format = "%Y-%m-%d",
-      time_format = "%H:%M",
+      time_format = "%H:%M:%S+09:00",
       substitutions = {
         datetime = function()
           return os.date("%Y%m%d%H%M%S", os.time())
