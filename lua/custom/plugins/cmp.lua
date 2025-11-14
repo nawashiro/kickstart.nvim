@@ -1,3 +1,4 @@
+local cmp = require('cmp')
 return {
     "hrsh7th/nvim-cmp",
     version = '*',
