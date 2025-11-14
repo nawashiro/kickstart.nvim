@@ -54,7 +54,7 @@ return {
       end
       
       local raw_link = require("obsidian.util").markdown_link(opts)
-      local link = urlDecode(raw_link)
+      local link = urldecode(raw_link)
       return link
     end,
     
