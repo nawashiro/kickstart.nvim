@@ -15,4 +15,4 @@ return {
     config = function()
         vim.opt.conceallevel = 1
     end,
-},
+}
