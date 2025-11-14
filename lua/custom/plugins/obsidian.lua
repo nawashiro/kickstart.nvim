@@ -43,11 +43,19 @@ return {
     },
 
     -- Optional, customize how markdown links are formatted.
-    -- markdown_link_func = function(opts)
-    --   local raw_link = require("obsidian.util").markdown_link(opts)
-    --   local link = string.gsub(raw_link, "%20", " ")
-    --   return link
-    -- end,
+    markdown_link_func = function(opts)
+      local function urlDecode(str)
+        str = string.gsub(str, "+", " ") -- Revert the common space encoding
+        str = string.gsub(str, "%%%x([%x%x])", function(c)
+            return string.char(tonumber(c, 16))
+        end)
+        return str
+      end
+      
+      local raw_link = require("obsidian.util").markdown_link(opts)
+      local link = urlDecode(raw_link)
+      return link
+    end,
     
     preferred_link_style = "markdown",
 
