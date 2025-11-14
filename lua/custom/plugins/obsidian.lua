@@ -15,12 +15,13 @@ return {
   opts = {
     workspaces = {
       {
-        name = "personal",
-        path = "~/vaults/personal",
-      },
-      {
-        name = "work",
-        path = "~/vaults/work",
+        name = "zettelkasten",
+        path = "/workspace/zettelkasten",
+        templates = {
+          folder = "00 system-management area/00 system-management category/00.03 template",
+          date_format = "%Y-%m-%d",
+          time_format = "%H:%M",
+        },
       },
     },
 
