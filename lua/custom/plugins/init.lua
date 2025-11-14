@@ -12,4 +12,5 @@ return {
     require 'custom.plugins.obsidian',
     require 'custom.plugins.image',
     require 'custom.plugins.cmp',
+    require 'custom.plugins.render-markdown',
 }
