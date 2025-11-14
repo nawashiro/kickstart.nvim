@@ -19,6 +19,7 @@ return {
         path = "/workspace/zettelkasten",
       },
     },
+    
     templates = {
       folder = "projects/00 system-management area/00 system-management category/00.11 nvim template",
       date_format = "%Y-%m-%d",
@@ -32,7 +33,11 @@ return {
         end,
       },
     },
+    
     preferred_link_style = "markdown",
+
+    -- Optional, configure additional syntax highlighting / extmarks.
+    -- This requires you have `conceallevel` set to 1 or 2. See `:help conceallevel` for more details. 
     ui = {
       enable = true,  -- set to false to disable all additional syntax features
       update_debounce = 200,  -- update delay after a text change (in milliseconds)
@@ -75,6 +80,9 @@ return {
         ObsidianHighlightText = { bg = "#75662e" },
       },
     },
+    
+    conceallevel = 1,
+    
     -- see below for full list of options 👇
   },
 }
