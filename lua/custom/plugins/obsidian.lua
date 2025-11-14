@@ -46,11 +46,11 @@ return {
     },
 
     -- Optional, customize how markdown links are formatted.
-    markdown_link_func = function(opts)
-      local raw_link = require("obsidian.util").markdown_link(opts)
-      local link = string.gsub(raw_link, "%20", " ")
-      return link
-    end,
+    -- markdown_link_func = function(opts)
+    --   local raw_link = require("obsidian.util").markdown_link(opts)
+    --   local link = string.gsub(raw_link, "%20", " ")
+    --   return link
+    -- end,
     
     preferred_link_style = "markdown",
 
