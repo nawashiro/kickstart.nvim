@@ -27,10 +27,12 @@ return {
         datetime = function()
           return os.date("%Y%m%d%H%M%S", os.time())
         end
+      },
+      substitutions = {
         datetimeFormat = function()
           return os.date("%Y-%m-%dT%H:%M:%S+09:00", os.time())
         end
-      }
+      },
     },
     -- see below for full list of options 👇
   },
