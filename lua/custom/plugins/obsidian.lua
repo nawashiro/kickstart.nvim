@@ -25,7 +25,10 @@ return {
       time_format = "%H:%M",
       substitutions = {
         datetime = function()
-          return os.date("%Y%m%d%H%M%s", os.time())
+          return os.date("%Y%m%d%H%M%S", os.time())
+        end
+        datetimeFormat = function()
+          return os.date("%Y-%m-%dT%H:%M:%S+09:00", os.time())
         end
       }
     },
