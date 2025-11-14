@@ -11,5 +11,5 @@ return {
     require 'kickstart.plugins.gitsigns',
     require 'custom.plugins.obsidian',
     require 'custom.plugins.image',
-    require 'custom.plugins.nvim-cmp',
+    require 'custom.plugins.cmp',
 }
