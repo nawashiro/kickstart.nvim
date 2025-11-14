@@ -11,5 +11,6 @@ return {
     require 'kickstart.plugins.gitsigns',
     require 'custom.plugins.obsidian',
     require 'custom.plugins.image',
-    conceallevel = 1,
+    
+    vim.opt.conceallevel = 1,
 }
