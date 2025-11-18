@@ -34,12 +34,23 @@ return {
       },
     },
 
+    disable_frontmatter = true,
+
     -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
     completion = {
       -- Set to false to disable completion.
       nvim_cmp = true,
       -- Trigger completion at 2 chars.
       min_chars = 2,
+    },
+
+    daily_notes = {
+      -- Optional, if you keep daily notes in a separate directory.
+      folder = 'projects/10 life-admin/11 me/11.11 lifelog',
+      -- Optional, if you want to change the date format of the default alias of daily notes.
+      alias_format = '%Y-%m-%d',
+      -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
+      template = 'projects/00 system-management area/00 system-management category/00.11 nvim template/11.11 lifelog.md',
     },
 
     -- Optional, customize how markdown links are formatted.
