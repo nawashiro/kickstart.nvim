@@ -44,8 +44,5 @@ return {
         { name = 'path' }, -- ファイルパスから補完を取得 [1]
       },
     }
-
-    -- Neovimの組み込み設定を調整 [1]
-    vim.cmd [[ set completeopt=menuone,noinsert,noselect highlight! default link CmpItemKind CmpItemMenuDefault ]]
   end,
 }
