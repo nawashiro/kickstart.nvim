@@ -55,6 +55,23 @@ return {
       template = 'projects/00 system-management area/00 system-management category/00.11 nvim template/11.11 lifelog.md',
     },
 
+    follow_url_func = function(url)
+      local hex_to_char = function(x)
+        return string.char(tonumber(x, 16))
+      end
+
+      local urldecode = function(url)
+        if url == nil then
+          return
+        end
+        url = url:gsub('+', ' ')
+        url = url:gsub('%%(%x%x)', hex_to_char)
+        return url
+      end
+
+      vim.fn.jobstart { 'open', urldecode(url) }
+    end,
+
     -- Optional, customize how markdown links are formatted.
     markdown_link_func = function(opts)
       local hex_to_char = function(x)
@@ -76,8 +93,6 @@ return {
     end,
 
     preferred_link_style = 'markdown',
-
-    checkboxes = { ' ', 'x' },
 
     -- Optional, configure additional syntax highlighting / extmarks.
     -- This requires you have `conceallevel` set to 1 or 2. See `:help conceallevel` for more details.
