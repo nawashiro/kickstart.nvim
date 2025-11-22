@@ -55,17 +55,6 @@ return {
       template = 'projects/00 system-management area/00 system-management category/00.11 nvim template/11.11 lifelog.md',
     },
 
-    mappings = {
-      ['<cr>'] = {
-        action = function()
-          if require('Obsidian').util.cursor_on_markdown_link(nil, nil, true) then
-            return '<cmd>ObsidianFollowLink<CR>'
-          end
-          return require('Obsidian').util.toggle_checkbox({ ' ', 'x' }, nil)
-        end,
-      },
-    },
-
     -- Optional, customize how markdown links are formatted.
     markdown_link_func = function(opts)
       local hex_to_char = function(x)
@@ -97,8 +86,8 @@ return {
       checkboxes = {
         -- NOTE: the 'char' value has to be a single character, and the highlight groups are defined below.
 
-        [' '] = { char = 'O', hl_group = 'ObsidianTodo' },
-        ['x'] = { char = 'X', hl_group = 'ObsidianDone' },
+        [' '] = { order = 1, char = 'O', hl_group = 'ObsidianTodo' },
+        ['x'] = { order = 2, char = 'X', hl_group = 'ObsidianDone' },
         -- You can also add more custom ones...
       },
       -- Use bullet marks for non-checkbox lists.
