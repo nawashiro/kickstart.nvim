@@ -14,4 +14,3 @@ return {
 
   vim.keymap.set({ 'n', 'x' }, 'gp', '"+p'),
 }
-
