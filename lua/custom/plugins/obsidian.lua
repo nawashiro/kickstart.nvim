@@ -86,8 +86,8 @@ return {
       -- Define how various check-boxes are displayed
       checkboxes = {
         -- NOTE: the 'char' value has to be a single character, and the highlight groups are defined below.
-        [' '] = { char = '☐', hl_group = 'ObsidianTodo' },
-        ['x'] = { char = '✔', hl_group = 'ObsidianDone' },
+        [' '] = { char = 'O', hl_group = 'ObsidianTodo' },
+        ['x'] = { char = 'X', hl_group = 'ObsidianDone' },
         -- Replace the above with this if you don't have a patched font:
         -- [" "] = { char = "☐", hl_group = "ObsidianTodo" },
         -- ["x"] = { char = "✔", hl_group = "ObsidianDone" },
