@@ -11,6 +11,4 @@ return {
   require 'kickstart.plugins.gitsigns',
   require 'custom.plugins.obsidian',
   require 'custom.plugins.cmp',
-
-  vim.keymap.set({ 'n', 'x' }, 'gp', '"+p'),
 }
