@@ -55,6 +55,17 @@ return {
       template = 'projects/00 system-management area/00 system-management category/00.11 nvim template/11.11 lifelog.md',
     },
 
+    mappings = {
+      ['<cr>'] = {
+        action = function()
+          if require('Obsidian').util.cursor_on_markdown_link(nil, nil, true) then
+            return '<cmd>ObsidianFollowLink<CR>'
+          end
+          return require('Obsidian').util.toggle_checkbox({ ' ', 'x' }, nil)
+        end,
+      },
+    },
+
     -- Optional, customize how markdown links are formatted.
     markdown_link_func = function(opts)
       local hex_to_char = function(x)
