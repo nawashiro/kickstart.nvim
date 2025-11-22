@@ -72,26 +72,6 @@ return {
       vim.fn.jobstart { 'open', urldecode(url) }
     end,
 
-    -- Optional, customize how markdown links are formatted.
-    markdown_link_func = function(opts)
-      local hex_to_char = function(x)
-        return string.char(tonumber(x, 16))
-      end
-
-      local urldecode = function(url)
-        if url == nil then
-          return
-        end
-        url = url:gsub('+', ' ')
-        url = url:gsub('%%(%x%x)', hex_to_char)
-        return url
-      end
-
-      local raw_link = require('obsidian.util').markdown_link(opts)
-      local link = urldecode(raw_link)
-      return link
-    end,
-
     preferred_link_style = 'markdown',
 
     -- Optional, configure additional syntax highlighting / extmarks.
