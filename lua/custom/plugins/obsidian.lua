@@ -83,6 +83,14 @@ return {
       enable = true, -- set to false to disable all additional syntax features
       update_debounce = 200, -- update delay after a text change (in milliseconds)
       max_file_length = 5000, -- disable UI features for files with more than this many lines
+      checkboxes = {
+        -- NOTE: the 'char' value has to be a single character, and the highlight groups are defined below.
+
+        [' '] = { char = '☐', hl_group = 'ObsidianTodo' },
+        ['x'] = { char = '✔', hl_group = 'ObsidianDone' },
+
+        -- You can also add more custom ones...
+      },
       -- Use bullet marks for non-checkbox lists.
       bullets = { char = '•', hl_group = 'ObsidianBullet' },
       external_link_icon = { char = '🔗', hl_group = 'ObsidianExtLinkIcon' },
