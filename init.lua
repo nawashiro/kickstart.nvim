@@ -726,7 +726,7 @@ require('lazy').setup({
           'eslint',
           'html',
           'jsonls',
-          'typescript-language-server',
+          'typescript-tools',
           'tailwindcss',
         }, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
         automatic_installation = false,
