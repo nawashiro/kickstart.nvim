@@ -77,6 +77,8 @@ return {
 
     preferred_link_style = 'markdown',
 
+    checkboxes = { ' ', 'x' },
+
     -- Optional, configure additional syntax highlighting / extmarks.
     -- This requires you have `conceallevel` set to 1 or 2. See `:help conceallevel` for more details.
     ui = {
@@ -86,8 +88,8 @@ return {
       checkboxes = {
         -- NOTE: the 'char' value has to be a single character, and the highlight groups are defined below.
 
-        [' '] = { order = 1, char = 'O', hl_group = 'ObsidianTodo' },
-        ['x'] = { order = 2, char = 'X', hl_group = 'ObsidianDone' },
+        [' '] = { char = 'O', hl_group = 'ObsidianTodo' },
+        ['x'] = { char = 'X', hl_group = 'ObsidianDone' },
         -- You can also add more custom ones...
       },
       -- Use bullet marks for non-checkbox lists.
