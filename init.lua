@@ -727,7 +727,7 @@ require('lazy').setup({
           'html',
           'jsonls',
           'tailwindcss',
-          'tsserver',
+          'typescript',
         }, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
         automatic_installation = false,
         handlers = {
