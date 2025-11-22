@@ -726,7 +726,7 @@ require('lazy').setup({
           'eslint',
           'html',
           'jsonls',
-          'tsserver',
+          'typescript',
           'tailwindcss',
         }, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
         automatic_installation = false,
@@ -1026,4 +1026,3 @@ require('lazy').setup({
 -- custom
 
 vim.opt.conceallevel = 1
-
