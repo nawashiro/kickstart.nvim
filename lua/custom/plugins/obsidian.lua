@@ -86,8 +86,8 @@ return {
       checkboxes = {
         -- NOTE: the 'char' value has to be a single character, and the highlight groups are defined below.
 
-        [' '] = { char = '☐', hl_group = 'ObsidianTodo' },
-        ['x'] = { char = '✔', hl_group = 'ObsidianDone' },
+        [' '] = { char = 'O', hl_group = 'ObsidianTodo' },
+        ['x'] = { char = 'X', hl_group = 'ObsidianDone' },
 
         -- You can also add more custom ones...
       },
