@@ -716,12 +716,19 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
-        'prettier'
+        'prettier',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
-        ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
+        ensure_installed = {
+          'cssls',
+          'eslint',
+          'html',
+          'jsonls',
+          'tsserver',
+          'tailwindcss',
+        }, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
         automatic_installation = false,
         handlers = {
           function(server_name)
@@ -1019,3 +1026,4 @@ require('lazy').setup({
 -- custom
 
 vim.opt.conceallevel = 1
+
