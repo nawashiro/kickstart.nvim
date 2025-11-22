@@ -681,8 +681,12 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
-        --
+
+        ts_ls = {
+          'pmizio/typescript-tools.nvim',
+          dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+          opts = {},
+        },
 
         lua_ls = {
           -- cmd = { ... },
@@ -727,7 +731,7 @@ require('lazy').setup({
           'html',
           'jsonls',
           'tailwindcss',
-          'typescript',
+          'ts_ls',
         }, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
         automatic_installation = false,
         handlers = {
