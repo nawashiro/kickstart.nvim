@@ -17,22 +17,61 @@ return {
       {
         name = 'zettelkasten',
         path = '/workspace/zettelkasten',
-      },
-    },
+        
+        overrides = {
+          templates = {
+            folder = 'projects/00 system-management area/00 system-management category/00.11 nvim template',
+            date_format = '%Y-%m-%d',
+            substitutions = {
+              datetime = function()
+                return os.date('%Y%m%d%H%M%S', os.time() + 9 * 60 * 60)
+              end,
+              datetimeFormat = function()
+                return os.date('%Y-%m-%dT%H:%M:%S+09:00', os.time() + 9 * 60 * 60)
+              end,
+              time = function()
+                return os.date('%H:%M', os.time() + 9 * 60 * 60)
+              end,
+            },
+          },
+          
+          daily_notes = {
+            folder = 'projects/10 life-admin/11 me/11.11 lifelog',
+            alias_format = '%Y-%m-%d',
+            template = 'projects/00 system-management area/00 system-management category/00.11 nvim template/11.11 lifelog.md',
+          },
+          
+        },
 
-    templates = {
-      folder = 'projects/00 system-management area/00 system-management category/00.11 nvim template',
-      date_format = '%Y-%m-%d',
-      substitutions = {
-        datetime = function()
-          return os.date('%Y%m%d%H%M%S', os.time() + 9 * 60 * 60)
-        end,
-        datetimeFormat = function()
-          return os.date('%Y-%m-%dT%H:%M:%S+09:00', os.time() + 9 * 60 * 60)
-        end,
-        time = function()
-          return os.date('%H:%M', os.time() + 9 * 60 * 60)
-        end,
+        {
+        name = 'zettelkasten',
+        path = 'D:/home_2/obsidian/zettelkasten',
+        
+        overrides = {
+          templates = {
+            folder = 'projects/00 system-management area/00 system-management category/00.11 nvim template',
+            date_format = '%Y-%m-%d',
+            substitutions = {
+              datetime = function()
+                return os.date('%Y%m%d%H%M%S', os.time() + 9 * 60 * 60)
+              end,
+              datetimeFormat = function()
+                return os.date('%Y-%m-%dT%H:%M:%S+09:00', os.time() + 9 * 60 * 60)
+              end,
+              time = function()
+                return os.date('%H:%M', os.time() + 9 * 60 * 60)
+              end,
+            },
+          },
+          
+          daily_notes = {
+            folder = 'projects/10 life-admin/11 me/11.11 lifelog',
+            alias_format = '%Y-%m-%d',
+            template = 'projects/00 system-management area/00 system-management category/00.11 nvim template/11.11 lifelog.md',
+          },
+          
+        },
+        
       },
     },
 
@@ -44,15 +83,6 @@ return {
       nvim_cmp = true,
       -- Trigger completion at 2 chars.
       min_chars = 2,
-    },
-
-    daily_notes = {
-      -- Optional, if you keep daily notes in a separate directory.
-      folder = 'projects/10 life-admin/11 me/11.11 lifelog',
-      -- Optional, if you want to change the date format of the default alias of daily notes.
-      alias_format = '%Y-%m-%d',
-      -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
-      template = 'projects/00 system-management area/00 system-management category/00.11 nvim template/11.11 lifelog.md',
     },
 
     follow_url_func = function(url)
