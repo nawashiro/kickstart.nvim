@@ -42,34 +42,7 @@ return {
           },
         }
       },
-      {
-        name = 'zettelkasten-windows',
-        path = 'D:/home_2/obsidian/zettelkasten',
-        
-        overrides = {
-          templates = {
-            folder = 'projects/00 system-management area/00 system-management category/00.11 nvim template',
-            date_format = '%Y-%m-%d',
-            substitutions = {
-              datetime = function()
-                return os.date('%Y%m%d%H%M%S', os.time() + 9 * 60 * 60)
-              end,
-              datetimeFormat = function()
-                return os.date('%Y-%m-%dT%H:%M:%S+09:00', os.time() + 9 * 60 * 60)
-              end,
-              time = function()
-                return os.date('%H:%M', os.time() + 9 * 60 * 60)
-              end,
-            },
-          },
-          
-          daily_notes = {
-            folder = 'projects/10 life-admin/11 me/11.11 lifelog',
-            alias_format = '%Y-%m-%d',
-            template = 'projects/00 system-management area/00 system-management category/00.11 nvim template/11.11 lifelog.md',
-          },
-        }
-      },
+      
     },
 
     disable_frontmatter = true,
