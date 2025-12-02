@@ -40,11 +40,10 @@ return {
             alias_format = '%Y-%m-%d',
             template = 'projects/00 system-management area/00 system-management category/00.11 nvim template/11.11 lifelog.md',
           },
-          
-        },
-
-        {
-        name = 'zettelkasten',
+        }
+      },
+      {
+        name = 'zettelkasten-windows',
         path = 'D:/home_2/obsidian/zettelkasten',
         
         overrides = {
@@ -69,9 +68,7 @@ return {
             alias_format = '%Y-%m-%d',
             template = 'projects/00 system-management area/00 system-management category/00.11 nvim template/11.11 lifelog.md',
           },
-          
-        },
-        
+        }
       },
     },
 
