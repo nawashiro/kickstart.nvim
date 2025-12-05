@@ -3,8 +3,6 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-  vim.opt.shiftwidth == 2,
-  vim.opt.expandtab == true,
   require 'kickstart.plugins.debug',
   require 'kickstart.plugins.indent_line',
   require 'custom.plugins.lint',
