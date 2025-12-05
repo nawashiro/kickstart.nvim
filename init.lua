@@ -99,7 +99,7 @@ vim.g.clipboard = {
     ['+'] = require('vim.ui.clipboard.osc52').copy '+',
     ['*'] = require('vim.ui.clipboard.osc52').copy '*',
   },
-  paste = { 
+  paste = {
     ['+'] = require('vim.ui.clipboard.osc52').paste '+',
     ['*'] = require('vim.ui.clipboard.osc52').paste '*',
   },
@@ -1042,3 +1042,5 @@ require('lazy').setup({
 -- custom
 
 vim.opt.conceallevel = 1
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
