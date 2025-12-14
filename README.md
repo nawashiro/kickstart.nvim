@@ -9,6 +9,7 @@
 - 主な追加: Neo-tree, gitsigns, autopairs, obsidian.nvim など
 
 ## 使い方
+
 - リーダーキー: `<Space>`
 - ファイル検索: `<leader>sf`（Telescope）
 - バッファ切替: `<leader><leader>`
@@ -20,6 +21,7 @@
 - フォーマット: 保存時に自動実行。手動なら `<leader>f`
 
 ## フォーマッタ設定（Prettier）
+
 - conform.nvim で `BufWritePre` に自動整形を掛けています。c/cpp だけは除外。
 - Prettier がデフォルトで扱う言語を一通り設定済み（js/ts/jsx/tsx/vue/svelte/css/scss/less/html/json/jsonc/yaml/markdown/mdx/graphql/handlebars など）。
 - Lua は `stylua` で整形。
@@ -27,23 +29,28 @@
 - 一括整形のデフォルトキーマップは `<leader>f`。追加設定は不要です。
 
 ## 構成の見方
+
 - `init.lua`: 基本設定と主要プラグインの登録。行動やキーマップはここで確認。
 - `lua/custom/plugins/*.lua`: 追加プラグインを小分けに定義。不要になったらファイルごと削除するだけ。
 - `lua/kickstart/plugins/*`: kickstart 付属のモジュール。必要なものだけを `custom/plugins/init.lua` から読み込んでいます。
 
 ## プラグインを追加する
+
 1. `lua/custom/plugins` に新しいファイルを作り、lazy.nvim の仕様に沿ったテーブルを `return` する。
 2. `lua/custom/plugins/init.lua` のテーブルに `require 'custom.plugins.<name>'` を足す。
 3. Neovim を再起動するか `:Lazy sync` を実行。
 
 ## メンテナンス
+
 - アップデート: `:Lazy update` でプラグインを更新。
 - LSP/ツール確認: `:Mason` でインストール状態を確認。必要なら `:MasonToolsInstall`.
 - 設定変更: なるべく `lua/custom/plugins` 側に追記し、`init.lua` はシンプルに保つ。
 - 動作確認: `:checkhealth` でヘルスチェック。フォーマッタは `:ConformInfo` が便利。
 
 ## 初期セットアップ
+
 Neovim の設定ディレクトリにクローンし、起動するだけで自動セットアップされます。
+
 ```sh
 git clone <this-repo> "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 nvim
