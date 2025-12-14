@@ -17,7 +17,6 @@ return {
       {
         name = 'zettelkasten',
         path = '/workspace/zettelkasten',
-        
         overrides = {
           templates = {
             folder = 'projects/00 system-management area/00 system-management category/00.11 nvim template',
@@ -34,15 +33,13 @@ return {
               end,
             },
           },
-          
           daily_notes = {
             folder = 'projects/10 life-admin/11 me/11.11 lifelog',
             alias_format = '%Y-%m-%d',
             template = 'projects/00 system-management area/00 system-management category/00.11 nvim template/11.11 lifelog.md',
           },
-        }
+        },
       },
-      
     },
 
     disable_frontmatter = true,
