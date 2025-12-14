@@ -729,6 +729,7 @@ require('lazy').setup({
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'prettier',
+        'prettierd',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -771,7 +772,7 @@ require('lazy').setup({
       },
     },
     opts = {
-      notify_on_error = false,
+      notify_on_error = true,
       format_on_save = function(bufnr)
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
@@ -781,30 +782,30 @@ require('lazy').setup({
           return nil
         else
           return {
-            timeout_ms = 500,
+            timeout_ms = 3000,
             lsp_format = 'fallback',
           }
         end
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        javascript = { 'prettier' },
-        typescript = { 'prettier' },
-        javascriptreact = { 'prettier' },
-        typescriptreact = { 'prettier' },
-        vue = { 'prettier' },
-        svelte = { 'prettier' },
-        css = { 'prettier' },
-        scss = { 'prettier' },
-        less = { 'prettier' },
-        html = { 'prettier' },
-        json = { 'prettier' },
-        jsonc = { 'prettier' },
-        yaml = { 'prettier' },
-        markdown = { 'prettier' },
-        ['markdown.mdx'] = { 'prettier' },
-        graphql = { 'prettier' },
-        handlebars = { 'prettier' },
+        javascript = { 'prettierd', 'prettier' },
+        typescript = { 'prettierd', 'prettier' },
+        javascriptreact = { 'prettierd', 'prettier' },
+        typescriptreact = { 'prettierd', 'prettier' },
+        vue = { 'prettierd', 'prettier' },
+        svelte = { 'prettierd', 'prettier' },
+        css = { 'prettierd', 'prettier' },
+        scss = { 'prettierd', 'prettier' },
+        less = { 'prettierd', 'prettier' },
+        html = { 'prettierd', 'prettier' },
+        json = { 'prettierd', 'prettier' },
+        jsonc = { 'prettierd', 'prettier' },
+        yaml = { 'prettierd', 'prettier' },
+        markdown = { 'prettierd', 'prettier' },
+        ['markdown.mdx'] = { 'prettierd', 'prettier' },
+        graphql = { 'prettierd', 'prettier' },
+        handlebars = { 'prettierd', 'prettier' },
       },
     },
   },
