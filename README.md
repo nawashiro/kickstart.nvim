@@ -31,7 +31,6 @@ kickstart.nvim をベースに、読みやすさと軽さを優先した個人�
 
 - `conform.nvim` を `BufWritePre` で実行（c/cpp のみ除外）。`format_on_save` で LSP フォーマットはオフ。
 - Lua は `stylua`、Web 系は `prettierd`（js/ts/jsx/tsx/vue/svelte/css/scss/less/html/json/jsonc/yaml/markdown/mdx/graphql/handlebars など）。
-- Markdown は CJK と ASCII の間に半角スペースを挿入する Prettier プラグイン（`.prettierrc.cjs` + `prettier-plugins/markdown-cjk-spacing.js`）を同梱。
 - `:ConformInfo` で有効なフォーマッタを確認。`<leader>f` で手動整形。
 - Mason が `stylua` / `prettierd` を自動インストールします。
 
