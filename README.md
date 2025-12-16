@@ -1,12 +1,17 @@
 # kickstart.nvim セットアップメモ
 
-このリポジトリは kickstart.nvim をベースに、余計な肥大化を避けつつ日常使いに必要な最低限の機能だけを整えた構成です。リーダブルでシンプル、必要なものは `lua/custom/plugins` に小さく積み上げる方針です。
+kickstart.nvim をベースに、読みやすさと軽さを優先した個人用セットアップです。必要なものは `lua/custom/plugins` に小さく追加し、不要になったらファイルごと削除する運用にしています。
 
-- プラグイン管理: lazy.nvim
-- LSP: `nvim-lspconfig` + `mason` + `mason-tool-installer`
-- 補完: `blink.cmp`（余計な重複を排除）
-- フォーマッタ: conform.nvim + Prettier（対応言語は保存時自動整形）
-- 主な追加: Neo-tree, gitsigns, autopairs, obsidian.nvim など
+## この構成のポイント
+
+- プラグイン管理は lazy.nvim。kickstart 付属の一部（debug/indent_line/autopairs/gitsigns）も `custom/plugins/init.lua` で明示的に有効化。
+- UI/操作まわり: tokyonight-night テーマ、`mini.statusline` / `mini.ai` / `mini.surround`、`indent-blankline`、`todo-comments`。
+- ナビゲーション: Telescope 一式に加え、Neo-tree のトグル/リビール (`<leader>e`, `<leader>r`, `\` )。
+- Git: gitsigns の推奨キーマップを導入（`[c` / `]c` でハンク移動、`<leader>hs/hr/hp/hd` など）。
+- LSP/補完: `nvim-lspconfig` + `mason` + `mason-tool-installer` に `blink.cmp` + `LuaSnip` を組み合わせたシンプル構成。デフォルトサーバーは `ts_ls` と `lua_ls`。
+- デバッグ: `nvim-dap` + `dap-ui` + `dap-go`。`<F5>/<F1>/<F2>/<F3>/<F7>` を基本に利用。
+- フォーマット: `conform.nvim`。Lua は `stylua`、Web 系は `prettierd`、保存時自動整形（c/cpp は除外）。`<leader>f` で手動実行。
+- リント: `nvim-lint` は土台のみ用意し、デフォルトの linters は空。必要なものを `require('lint').linters_by_ft` に追加して使う。
 
 ## 使い方
 
@@ -15,24 +20,35 @@
 - バッファ切替: `<leader><leader>`
 - 設定/ヘルプ検索: `<leader>sh`, `<leader>sk`, `<leader>ss`
 - Neo-tree: `<leader>e` トグル / `<leader>r` フォーカス / `\` で現在ファイルを開閉
+- gitsigns: `[c` / `]c` でハンク移動、`<leader>hs` ステージ、`<leader>hr` リセット、`<leader>hp` プレビュー
+- DAP: `<F5>` 実行、`<F1>/<F2>/<F3>` ステップ、`<F7>` で UI トグル
 - 診断: `<leader>q` で loclist に診断を集約
 - ウィンドウ移動: `<C-h/j/k/l>`
 - ハイライト解除: `<Esc>`
 - フォーマット: 保存時に自動実行。手動なら `<leader>f`
 
-## フォーマッタ設定（Prettier）
+## フォーマット
 
-- conform.nvim で `BufWritePre` に自動整形を掛けています。c/cpp だけは除外。
-- Prettier がデフォルトで扱う言語を一通り設定済み（js/ts/jsx/tsx/vue/svelte/css/scss/less/html/json/jsonc/yaml/markdown/mdx/graphql/handlebars など）。
-- Lua は `stylua` で整形。
-- Mason が `prettier` を自動インストールします。追加で必要な場合は `:Mason` からインストール状況を確認してください。
-- 一括整形のデフォルトキーマップは `<leader>f`。追加設定は不要です。
+- `conform.nvim` を `BufWritePre` で実行（c/cpp のみ除外）。`format_on_save` で LSP フォーマットはオフ。
+- Lua は `stylua`、Web 系は `prettierd`（js/ts/jsx/tsx/vue/svelte/css/scss/less/html/json/jsonc/yaml/markdown/mdx/graphql/handlebars など）。
+- `:ConformInfo` で有効なフォーマッタを確認。`<leader>f` で手動整形。
+- Mason が `stylua` / `prettierd` を自動インストールします。
+
+## リント
+
+- `nvim-lint` を読み込むだけの最小設定。`BufEnter` / `BufWritePost` / `InsertLeave` で `lint.try_lint()` が走ります。
+- デフォルト linters は空なので、必要な言語だけ `require('lint').linters_by_ft` に追記してください。
+
+## LSP と補完
+
+- `mason-lspconfig` で `cssls` / `eslint` / `html` / `jsonls` / `tailwindcss` / `ts_ls` を ensure。`servers` テーブルに追加すれば自動導入されます。
+- `blink.cmp` + `LuaSnip` を採用。`<c-space>` でドキュメント表示、`<c-n>/<c-p>` で候補移動などデフォルトキーマップで運用。
 
 ## 構成の見方
 
 - `init.lua`: 基本設定と主要プラグインの登録。行動やキーマップはここで確認。
 - `lua/custom/plugins/*.lua`: 追加プラグインを小分けに定義。不要になったらファイルごと削除するだけ。
-- `lua/kickstart/plugins/*`: kickstart 付属のモジュール。必要なものだけを `custom/plugins/init.lua` から読み込んでいます。
+- `lua/kickstart/plugins/*`: kickstart 付属のモジュール。使うものだけを `custom/plugins/init.lua` から読み込んでいます。
 
 ## プラグインを追加する
 
@@ -56,6 +72,6 @@ git clone <this-repo> "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 nvim
 ```
 
-必要な外部コマンド: `git`, `make`, `unzip`, `ripgrep`, `fd`, `prettier`（Mason が導入）, Nerd Font（任意）
+必要な外部コマンド: `git`, `make`, `unzip`, `ripgrep`, `fd`、Nerd Font（任意）
 
 この構成を土台に、必要な機能だけを小さく積み上げていってください。
