@@ -11,7 +11,7 @@ kickstart.nvim をベースに、読みやすさと軽さを優先した個人�
 - LSP/補完: `nvim-lspconfig` + `mason` + `mason-tool-installer` に `blink.cmp` + `LuaSnip` を組み合わせたシンプル構成。デフォルトサーバーは `ts_ls` と `lua_ls`。
 - デバッグ: `nvim-dap` + `dap-ui` + `dap-go`。`<F5>/<F1>/<F2>/<F3>/<F7>` を基本に利用。
 - フォーマット: `conform.nvim`。Lua は `stylua`、Web 系は `prettierd`、保存時自動整形（c/cpp は除外）。`<leader>f` で手動実行。
-- リント: `nvim-lint` は土台のみ用意し、デフォルトの linters は空。必要なものを `require('lint').linters_by_ft` に追加して使う。
+- リント: `nvim-lint` は Markdown で CommonMark を守るため `markdownlint` をデフォルト有効化。ほかの言語は `require('lint').linters_by_ft` に必要なものを追加して使う。
 
 ## 使い方
 
@@ -36,8 +36,8 @@ kickstart.nvim をベースに、読みやすさと軽さを優先した個人�
 
 ## リント
 
-- `nvim-lint` を読み込むだけの最小設定。`BufEnter` / `BufWritePost` / `InsertLeave` で `lint.try_lint()` が走ります。
-- デフォルト linters は空なので、必要な言語だけ `require('lint').linters_by_ft` に追記してください。
+- `nvim-lint` で Markdown は `markdownlint` をデフォルト有効化し、CommonMark 基準で `BufEnter` / `BufWritePost` / `InsertLeave` に lint を走らせます。
+- それ以外の言語は必要に応じて `require('lint').linters_by_ft` に追記してください。Mason が `markdownlint` を自動導入するので前提ツールなしで動作します。
 
 ## LSP と補完
 
