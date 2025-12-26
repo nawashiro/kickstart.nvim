@@ -712,6 +712,13 @@ require('lazy').setup({
         },
       }
 
+      local has_custom_lsp, custom_lsp = pcall(require, 'custom.lsp')
+      if has_custom_lsp then
+        for server_name, server_config in pairs(custom_lsp.servers or {}) do
+          servers[server_name] = server_config
+        end
+      end
+
       -- Ensure the servers and tools above are installed
       --
       -- To check the current status of installed tools and/or manually install
