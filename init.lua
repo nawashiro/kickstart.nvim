@@ -1003,6 +1003,5 @@ require('lazy').setup({
 
 -- custom
 
-vim.opt.conceallevel = 1
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
